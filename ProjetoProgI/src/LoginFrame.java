@@ -176,13 +176,13 @@ public class LoginFrame extends javax.swing.JFrame {
         private void logarUsuario(String usuario, String senha) {
         String senhaAtual,usuarioAtual;
         String senhaTeste = "";
-        int pontuacaoUsuario;
+        int pontuacaoUsuario = 0;
         boolean naoApareceu = true;
         File dados = new File("data");
         try {
             Scanner reader = new Scanner(dados);
             while ((reader.hasNextLine())&&(naoApareceu)){
-                pontuacaoUsuario = reader.nextInt();
+                pontuacaoUsuario = Integer.parseInt(reader.next());
                 usuarioAtual = reader.next();
                 senhaAtual = reader.next();
                 if(usuario.equals(usuarioAtual)){
@@ -210,7 +210,7 @@ public class LoginFrame extends javax.swing.JFrame {
     }
     private void criarNovoUsuario(String usuario, String senha) {
         File dados = new File("data");
-        File temp = new File("temp.txt");
+        File temp = new File("temp");
         try {
             Scanner leitor = new Scanner(dados);
             Formatter escritor = new Formatter(temp);
