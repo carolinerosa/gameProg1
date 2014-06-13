@@ -23,6 +23,7 @@ public class LoginFrame extends javax.swing.JFrame {
     public LoginFrame() {
         initComponents();
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
+        setResizable(false);
     }
 
     /**

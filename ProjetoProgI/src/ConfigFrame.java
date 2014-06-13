@@ -17,6 +17,7 @@ public class ConfigFrame extends javax.swing.JFrame {
         initComponents();
         nivelDificuldade.setSelectedIndex(1);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setResizable(false);
     }
 
     /**
@@ -33,10 +34,8 @@ public class ConfigFrame extends javax.swing.JFrame {
         jToolBar1 = new javax.swing.JToolBar();
         jCheckBox2 = new javax.swing.JCheckBox();
         volumeMusica = new javax.swing.JSlider();
-        volumeMaster = new javax.swing.JSlider();
         jLabel1 = new javax.swing.JLabel();
         nivelDificuldade = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
         resolEscolhida = new javax.swing.JComboBox();
         gameHazardIcon = new javax.swing.JLabel();
         tittle = new javax.swing.JLabel();
@@ -46,8 +45,6 @@ public class ConfigFrame extends javax.swing.JFrame {
         botaoCancelar = new javax.swing.JButton();
         onMusica = new javax.swing.JToggleButton();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        onSons = new javax.swing.JToggleButton();
 
         jCheckBox1.setText("jCheckBox1");
 
@@ -78,8 +75,6 @@ public class ConfigFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Volume dos Sons:");
-
         resolEscolhida.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "800x600", "Em Breve", "Em Breve", "Em Breve" }));
 
         gameHazardIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GAME_HAZARD_LOGO.png"))); // NOI18N
@@ -108,35 +103,24 @@ public class ConfigFrame extends javax.swing.JFrame {
 
         jLabel5.setText("Música:");
 
-        jLabel6.setText("Sons:");
-
-        onSons.setText("ON");
-        onSons.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                onSonsMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(botaoOk)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botaoCancelar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(gameHazardIcon)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(gameHazardIcon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(resolEscolhida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(resolEscolhida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(botaoOk)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botaoCancelar)
+                        .addGap(27, 27, 27))
                     .addComponent(tittle)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
@@ -147,29 +131,15 @@ public class ConfigFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(volumeMusica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(volumeMaster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(onSons))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nivelDificuldade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(nivelDificuldade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(gameHazardIcon)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(botaoOk)
-                            .addComponent(botaoCancelar)))
+                    .addComponent(gameHazardIcon)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(tittle)
@@ -183,21 +153,16 @@ public class ConfigFrame extends javax.swing.JFrame {
                             .addComponent(volumeMusica, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(onSons, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(13, 13, 13)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(volumeMaster, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nivelDificuldade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(resolEscolhida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(14, Short.MAX_VALUE))
+                            .addComponent(resolEscolhida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(botaoOk)
+                                .addComponent(botaoCancelar)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -209,6 +174,7 @@ public class ConfigFrame extends javax.swing.JFrame {
 
     private void botaoOkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoOkMouseClicked
         MenuInicial.setVolumeMusica((int) (0.06*volumeMusica.getValue()));
+        MenuInicial.setDificuldade(nivelDificuldade.getSelectedIndex());
     }//GEN-LAST:event_botaoOkMouseClicked
 
     private void onMusicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_onMusicaMouseClicked
@@ -230,10 +196,6 @@ public class ConfigFrame extends javax.swing.JFrame {
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         MenuInicial.setConfigAberto(false);
     }//GEN-LAST:event_formWindowClosed
-
-    private void onSonsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_onSonsMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_onSonsMouseClicked
 
     /**
      * @param args the command line arguments
@@ -277,19 +239,19 @@ public class ConfigFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JComboBox nivelDificuldade;
     private javax.swing.JToggleButton onMusica;
-    private javax.swing.JToggleButton onSons;
     private javax.swing.JComboBox resolEscolhida;
     private javax.swing.JLabel tittle;
-    private javax.swing.JSlider volumeMaster;
     private javax.swing.JSlider volumeMusica;
     // End of variables declaration//GEN-END:variables
+
+    private void setDificuldade(int selectedIndex) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

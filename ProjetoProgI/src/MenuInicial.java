@@ -25,9 +25,10 @@ public class MenuInicial {
     private static boolean playerLogou = false;
     private static boolean loginAberto = false;
     private static boolean configAberto = false;
-    private static LoginFrame login;
-    private static ConfigFrame config;
-    static Game jogo;
+    static LoginFrame login;
+    static ConfigFrame config;
+    private static Game jogo;
+    static int volumeMusica,dificuldade;
 
     public static void main(String[] args) {
         janela = new Window(800, 600);
@@ -68,7 +69,9 @@ public class MenuInicial {
     }
 
     private static void startGame() {
-       jogo = new Game();
+        musica.stop();
+       jogo = new Game(musica.isExecuting(),volumeMusica,dificuldade);
+       musica = null;
     }
 
     private static void executar() {
@@ -111,6 +114,7 @@ public class MenuInicial {
 
     static void setVolumeMusica(int vol) {
         musica.setVolume(vol);
+        volumeMusica = vol;
     }
 
     static void setConfigAberto(boolean w) {
@@ -123,5 +127,8 @@ public class MenuInicial {
 
     static void ligarMusica() {
             musica.play();
+    }
+    static void setDificuldade(int nivel){
+        dificuldade = nivel;
     }
 }
